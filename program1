@@ -1,0 +1,28 @@
+const readline = require('readline');
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+  inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  const inputString = userInput.toString();
+  const inputArray = inputString.split(',');
+  // array of given inputs
+// your code goes here
+  function palindrome (arr,n){
+   
+    for(let i=0;i<n/2;i++){
+if(arr[i]!=arr[n-i-1]){
+      return "false";
+    }
+  }
+      return"true";
+  }
+  let arr= userInput[0].split("");
+  let n =arr.length;
+  
+  let output = palindrome(arr,n)
+    console.log(output)
+});
