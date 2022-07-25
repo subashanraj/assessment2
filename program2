@@ -1,0 +1,41 @@
+const readline = require('readline');
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput = [];
+  inp.on("line", (data) => {
+  userInput.push(data);
+});
+inp.on("close", () => {
+  const inputString = userInput.toString();
+  const inputArray = inputString.split(',');
+  // array of given inputs
+// your code goes here
+  let n= userInput[0];
+  let arr= userInput[1].split(" ")
+    let arr1=[];
+  let sum1=0;
+  let arr2=[];
+  let sum2=0;
+  
+  if(n==arr.length){
+    for(i=0;i<arr.length/2;i++){
+      arr1.push(arr[i])}
+  for(j=arr.length-1;j>=n/2;j--){
+    arr2.push(arr[j])}
+  
+  for(k=0;k<arr1.length;k++){
+  
+sum1=+sum1+ +arr1[k]  }
+  
+  for(l=0;l<arr2.length;l++){
+  sum2=+sum2+ +arr2[l];
+    
+  }
+ 
+  if(sum1/arr1.length==sum2/arr2.length)
+    console.log("yes")
+    else
+      console.log("no")
+    }
+});
